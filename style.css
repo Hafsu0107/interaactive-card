@@ -111,11 +111,7 @@ input {
   border: 1px solid var(--dark-grayish-violet);
   border-radius: 6px;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
 input::placeholder {
   font-family: inherit;
   color: var(--dark-grayish-violet);
@@ -167,7 +163,7 @@ input:focus {
 #card-cvc {
   width: 100%;
 }
-form button {
+#submit-btn {
   grid-column: 2 span;
   font-size: 18px;
   height: 50px;
@@ -200,4 +196,53 @@ form button {
   font-size: 18px;
   background-color: var(--very-dark-violet);
   cursor: pointer;
+}
+@media screen and (max-width: 1023px) {
+  .front-card .card-container img,
+  .front-card,
+  .back-card img,
+  .back-card {
+    width: 300px;
+  }
+  .card-container .card-logo {
+    width: 50px;
+  }
+  #number {
+    font-size: 1.1rem;
+  }
+  #cvc {
+    top: 42%;
+    right: 12%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .front-card .card-container img,
+  .front-card,
+  .back-card img,
+  .back-card {
+    width: 280px;
+  }
+  .left-section {
+    width: 100%;
+    min-height: 30vh;
+    background-image: url("./images/bg-main-mobile.png");
+  }
+  .cards {
+    flex-direction: column-reverse;
+    left: 61%;
+    top: 60%;
+    gap: 0;
+  }
+  .back-card {
+    transform: translateY(70px);
+  }
+  .front-card {
+    z-index: 100;
+  }
+  .right-section {
+    margin-top: 6rem;
+  }
 }
